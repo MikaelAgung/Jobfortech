@@ -33,7 +33,7 @@ class _HomepageState extends State<Homepage> {
         child: Scaffold(
           // Appbar with drawer, leading become drawer
           appBar: AppBar(
-            backgroundColor: Color(0xfff197DDC),
+            backgroundColor: Color(0xfff0371D8),
             // center for title aka logo jobfortech
             centerTitle: true,
             leading: Builder(builder: (BuildContext context) {
