@@ -1,3 +1,4 @@
+import 'package:JobforTech/Findworks&jobs.dart';
 import 'package:flutter/material.dart';
 
 class Workdeskpage extends StatelessWidget {
@@ -174,7 +175,10 @@ class Workdeskpage extends StatelessWidget {
                               backgroundColor: Color(0xff197DDC),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25))),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context)
+                                .pushNamed(WorksJobs.nameRoute);
+                          },
                           child: Text(
                             "Explore Work",
                             style: TextStyle(color: Colors.white),

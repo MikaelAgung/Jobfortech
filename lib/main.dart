@@ -1,3 +1,4 @@
+import 'package:JobforTech/Findworks&jobs.dart';
 import 'package:JobforTech/Loginpage.dart';
 
 import 'package:JobforTech/Notification.dart';
@@ -26,6 +27,7 @@ class MainApp extends StatelessWidget {
         Reviews.nameRoute: (ctx) => Reviews(),
         Referral.nameRoute: (ctx) => Referral(),
         Notifpage.nameRoute: (ctx) => Notifpage(),
+        WorksJobs.nameRoute: (ctx) => WorksJobs(),
       },
     );
   }
