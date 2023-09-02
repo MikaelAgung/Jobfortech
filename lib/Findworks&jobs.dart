@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:JobforTech/Jobpage.dart';
 import 'package:JobforTech/Worksandjobscard.dart';
 import 'package:flutter/material.dart';
 
@@ -158,7 +159,9 @@ class _WorksJobsState extends State<WorksJobs> {
                     return Padding(
                       padding: const EdgeInsets.only(right: 10),
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).pushNamed(Jobpage.nameRoute);
+                        },
                         child: Container(
                           padding: EdgeInsets.all(15),
                           width: 240,
