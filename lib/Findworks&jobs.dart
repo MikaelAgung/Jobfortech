@@ -44,7 +44,7 @@ class _WorksJobsState extends State<WorksJobs> {
           title: Text("Find Works & Jobs")),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.only(left: 10, top: 24),
           // color: Colors.amber,
           child: Column(
             children: [
@@ -57,6 +57,7 @@ class _WorksJobsState extends State<WorksJobs> {
                     ),
                     onPressed: () => {},
                     child: Container(
+                      color: Colors.amber,
                       width: 340,
                       // color: Colors.black,
                       child: Row(
@@ -69,9 +70,14 @@ class _WorksJobsState extends State<WorksJobs> {
                                 fontSize: 30,
                                 fontWeight: FontWeight.normal),
                           ),
-                          Icon(
-                            Icons.refresh,
+                          IconButton(
+                            padding: EdgeInsets.zero,
+                            constraints: BoxConstraints(maxWidth: 0),
+                            icon: Icon(
+                              Icons.refresh,
+                            ),
                             color: Color(0xff1DB5E5),
+                            onPressed: () {},
                           ),
                         ],
                       ),
@@ -127,9 +133,12 @@ class _WorksJobsState extends State<WorksJobs> {
                                   fontSize: 30,
                                   fontWeight: FontWeight.normal),
                             ),
-                            Icon(
-                              Icons.manage_search_outlined,
+                            IconButton(
+                              padding: EdgeInsets.zero,
+                              constraints: BoxConstraints(maxWidth: 00),
+                              icon: Icon(Icons.manage_search_outlined),
                               color: Color(0xff1DB5E5),
+                              onPressed: () {},
                             ),
                           ],
                         ),

@@ -38,7 +38,7 @@ class Worklist extends StatelessWidget {
                     color: Colors.white,
                   ),
                   padding: EdgeInsets.all(10),
-                  width: 170,
+                  width: 180,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
