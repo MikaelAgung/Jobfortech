@@ -10,8 +10,12 @@ import 'package:JobforTech/drawer%20pages/Payroll.dart';
 import 'package:JobforTech/drawer%20pages/Referral.dart';
 import 'package:JobforTech/drawer%20pages/Reviews.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  // DEVICE ONLY SHOW POTRAIT UI, CAN"T LANDSCAPE
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(const MainApp());
 }
 
