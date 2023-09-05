@@ -3,6 +3,7 @@ import 'package:JobforTech/Jobpage.dart';
 import 'package:JobforTech/Loginpage.dart';
 
 import 'package:JobforTech/Notification.dart';
+import 'package:JobforTech/Projectpage.dart';
 import 'package:JobforTech/drawer%20pages/Edit%20Profile.dart';
 
 import 'package:JobforTech/drawer%20pages/Payroll.dart';
@@ -30,6 +31,7 @@ class MainApp extends StatelessWidget {
         Notifpage.nameRoute: (ctx) => Notifpage(),
         WorksJobs.nameRoute: (ctx) => WorksJobs(),
         Jobpage.nameRoute: (ctx) => Jobpage(),
+        Projectpage.nameRoute: (ctx) => Projectpage(),
       },
     );
   }

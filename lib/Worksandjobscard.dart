@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:JobforTech/Projectpage.dart';
 import 'package:flutter/material.dart';
 
 class Worklist extends StatelessWidget {
@@ -30,7 +31,9 @@ class Worklist extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(right: 10),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pushNamed(Projectpage.nameRoute);
+                },
                 child: Container(
                   decoration: BoxDecoration(
                     border: Border.all(color: Color(0xffE7E6E6)),
