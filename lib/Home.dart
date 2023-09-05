@@ -66,9 +66,19 @@ class _HomeState extends State<Home> {
                                       SizedBox(
                                         width: 8,
                                       ),
-                                      Image.asset(
-                                        "images/VerifiedCheck.png",
-                                        width: 16,
+                                      Container(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 8, vertical: 3),
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            color: Color(0xffFF6161)),
+                                        child: Text(
+                                          "Not Verified",
+                                          style: TextStyle(
+                                              fontSize: 12,
+                                              color: Colors.white),
+                                        ),
                                       )
                                     ],
                                   )
