@@ -70,8 +70,6 @@ class EmptyChat extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenheight = MediaQuery.of(context).size.height;
-
     return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
