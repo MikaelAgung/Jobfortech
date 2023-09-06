@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:JobforTech/Jobpage.dart';
+import 'package:JobforTech/Jobslistpage.dart';
 import 'package:JobforTech/Worksandjobscard.dart';
 import 'package:flutter/material.dart';
 
@@ -122,7 +123,7 @@ class _WorksJobsState extends State<WorksJobs> {
                       ),
                       onPressed: () => {},
                       child: Container(
-                        width: 340,
+                        width: 370,
                         // color: Colors.black,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -136,10 +137,14 @@ class _WorksJobsState extends State<WorksJobs> {
                             ),
                             IconButton(
                               padding: EdgeInsets.zero,
-                              constraints: BoxConstraints(maxWidth: 00),
+                              constraints: BoxConstraints(maxWidth: 30),
                               icon: Icon(Icons.manage_search_outlined),
                               color: Color(0xff1DB5E5),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context)
+                                    .pushNamed(Jobslistpage.nameRoute);
+                                // print("object");
+                              },
                             ),
                           ],
                         ),
