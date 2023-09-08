@@ -22,46 +22,26 @@ class Notifpage extends StatelessWidget {
       body: ListView(
         padding: EdgeInsets.all(20),
         children: const [
-          Text(
-            "You have 3 Unread Notifications today",
-            style: TextStyle(fontStyle: FontStyle.italic, fontSize: 15),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+              "You have 3 Unread Notifications today",
+              style: TextStyle(fontStyle: FontStyle.italic, fontSize: 15),
+            ),
           ),
-          SizedBox(height: 24),
-          Text("Today",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
-          SizedBox(height: 16),
-          Notifitem(),
-          SizedBox(
-            height: 10,
-          ),
-          Notifitem(),
-          SizedBox(
-            height: 10,
+          Padding(
+            padding: EdgeInsets.only(top: 24, bottom: 16),
+            child: Text("Today",
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
           ),
           Notifitem(),
-          SizedBox(
-            height: 10,
-          ),
-          SizedBox(height: 24),
-          Text("This Week",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
-          SizedBox(height: 16),
-          Readnotif(),
-          SizedBox(
-            height: 10,
+          Adminnotif(),
+          Padding(
+            padding: EdgeInsets.only(top: 24, bottom: 16),
+            child: Text("This Week",
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
           ),
           Readnotif(),
-          SizedBox(
-            height: 10,
-          ),
-          Readnotif(),
-          SizedBox(
-            height: 10,
-          ),
-          Readnotif(),
-          SizedBox(
-            height: 10,
-          ),
         ],
       ),
     );

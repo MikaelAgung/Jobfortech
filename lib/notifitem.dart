@@ -26,7 +26,8 @@ class Notifitem extends StatelessWidget {
     // end of function to random pick image from aset
     // then call it with img()
 
-    return Container(
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 5),
       child: Container(
         padding: EdgeInsets.all(20),
         width: 370,
@@ -69,7 +70,7 @@ class Notifitem extends StatelessWidget {
                     children: [
                       Flexible(
                         child: Text(
-                          "Craig Rosser mention you in E-Commerce Project Group Chatttttttttttttttt.",
+                          "A company post a new job. Let's check this out.",
                           maxLines: 2,
                           style: TextStyle(
                               fontSize: 14, fontWeight: FontWeight.w500),
@@ -124,7 +125,8 @@ class Readnotif extends StatelessWidget {
     // end of function to random pick image from aset
     // call it with img()
 
-    return Container(
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 5),
       child: Container(
         padding: EdgeInsets.all(20),
         width: 370,
@@ -171,7 +173,7 @@ class Readnotif extends StatelessWidget {
                     children: [
                       Flexible(
                         child: Text(
-                          "Craig Rosser mention you in E-Commerce Project Group Chatttttttttttttttt.",
+                          "A company post a new project. Let's check this out.",
                           maxLines: 2,
                           style: TextStyle(
                               fontSize: 14, fontWeight: FontWeight.w500),
@@ -185,7 +187,7 @@ class Readnotif extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        "2 minutes ago",
+                        "6 days ago",
                         style: TextStyle(
                           fontStyle: FontStyle.italic,
                         ),
@@ -196,6 +198,89 @@ class Readnotif extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class Adminnotif extends StatelessWidget {
+  const Adminnotif({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 5),
+      child: GestureDetector(
+        onTap: () {},
+        child: Container(
+          padding: EdgeInsets.all(20),
+          width: 370,
+          height: 100,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Color(0xffDCEEFF),
+          ),
+          child: Row(
+            children: [
+              Row(
+                children: [
+                  Image.asset(
+                    "images/titik.png",
+                    width: 12,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  ClipRRect(
+                      borderRadius: const BorderRadius.all(
+                        Radius.circular(21.0),
+                      ),
+                      // call the random img funct
+                      child: Container(
+                        width: 42,
+                        child: Image.asset("images/AdminJFT.png"),
+                      )),
+                ],
+              ),
+              const SizedBox(
+                width: 20,
+              ),
+              Container(
+                // color: Colors.amber,
+                width: 240,
+                child: const Column(
+                  children: [
+                    Row(
+                      children: [
+                        Flexible(
+                          child: Text(
+                            "You have new message from Admin. Let's check the message.",
+                            maxLines: 2,
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w500),
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "2 minutes ago",
+                          style: TextStyle(
+                            fontStyle: FontStyle.italic,
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
