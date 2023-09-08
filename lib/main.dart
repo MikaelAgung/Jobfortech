@@ -1,3 +1,4 @@
+import 'package:JobforTech/Companyprofile.dart';
 import 'package:JobforTech/Findworks&jobs.dart';
 import 'package:JobforTech/Jobpage.dart';
 import 'package:JobforTech/Jobslistpage.dart';
@@ -38,6 +39,7 @@ class MainApp extends StatelessWidget {
         Jobpage.nameRoute: (ctx) => Jobpage(),
         Projectpage.nameRoute: (ctx) => Projectpage(),
         Jobslistpage.nameRoute: (ctx) => Jobslistpage(),
+        Companyprofile.nameRoute: (ctx) => Companyprofile(),
       },
     );
   }

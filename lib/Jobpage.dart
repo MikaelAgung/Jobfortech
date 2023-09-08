@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:JobforTech/Companyprofile.dart';
 import 'package:flutter/material.dart';
 
 class Jobpage extends StatefulWidget {
@@ -118,7 +119,7 @@ class _JobpageState extends State<Jobpage> {
                 child: Text("> See More Company Profile",
                     style: TextStyle(color: Color(0xff197DDC))),
                 onTap: () {
-                  // Navigator.of(context).pushNamed();
+                  Navigator.of(context).pushNamed(Companyprofile.nameRoute);
                 },
               ),
 
