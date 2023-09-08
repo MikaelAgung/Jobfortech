@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:JobforTech/Projectpage.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -333,107 +334,102 @@ class _HomeState extends State<Home> {
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: const EdgeInsets.only(right: 10),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Color(0xffE7E6E6)),
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.white,
-                              ),
-                              padding: EdgeInsets.all(10),
-                              width: 160,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      SizedBox(
-                                        width: 35,
-                                        child: ClipRRect(
-                                            borderRadius:
-                                                const BorderRadius.all(
-                                              Radius.circular(40.0),
-                                            ),
-                                            child: img()),
-                                      ),
-                                      IconButton(
-                                        padding: EdgeInsets.zero,
-                                        constraints:
-                                            BoxConstraints(maxWidth: 20),
-                                        icon: Icon(
-                                          Icons.arrow_circle_right_outlined,
-                                          color: Color(0xff197DDC),
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.of(context)
+                                    .pushNamed(Projectpage.nameRoute);
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  border: Border.all(color: Color(0xffE7E6E6)),
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.white,
+                                ),
+                                padding: EdgeInsets.all(10),
+                                width: 160,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        SizedBox(
+                                          width: 35,
+                                          child: ClipRRect(
+                                              borderRadius:
+                                                  const BorderRadius.all(
+                                                Radius.circular(40.0),
+                                              ),
+                                              child: img()),
                                         ),
-                                        splashRadius: 60,
-                                        splashColor: Colors.red,
-                                        color: Colors.green,
-                                        onPressed: () {},
-                                      ),
-                                    ],
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 10),
-                                    child: Text(
-                                      "Project Name",
-                                      style: TextStyle(fontSize: 13),
+                                        Icon(Icons.arrow_circle_right_outlined,
+                                            color: Color(0xff197DDC)),
+                                      ],
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 5, bottom: 10),
-                                    child: Text(
-                                      "Company Name",
-                                      style: TextStyle(fontSize: 10),
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 10),
+                                      child: Text(
+                                        "Project Name",
+                                        style: TextStyle(fontSize: 13),
+                                      ),
                                     ),
-                                  ),
-                                  Row(
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Text(
-                                            "BE: ",
-                                            style: TextStyle(fontSize: 12),
-                                          ),
-                                          Text(
-                                            "2/3 ",
-                                            style: TextStyle(
-                                                fontSize: 12,
-                                                color: Color(0xff197DDC)),
-                                          ),
-                                        ],
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 5, bottom: 10),
+                                      child: Text(
+                                        "Company Name",
+                                        style: TextStyle(fontSize: 10),
                                       ),
-                                      Row(
-                                        children: [
-                                          Text(
-                                            "FE: ",
-                                            style: TextStyle(fontSize: 12),
-                                          ),
-                                          Text(
-                                            "2/3 ",
-                                            style: TextStyle(
-                                                fontSize: 12,
-                                                color: Color(0xff197DDC)),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          Text(
-                                            "MF: ",
-                                            style: TextStyle(fontSize: 12),
-                                          ),
-                                          Text(
-                                            "2/3",
-                                            style: TextStyle(
-                                                fontSize: 12,
-                                                color: Color(0xff197DDC)),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Text(
+                                              "BE: ",
+                                              style: TextStyle(fontSize: 12),
+                                            ),
+                                            Text(
+                                              "2/3 ",
+                                              style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: Color(0xff197DDC)),
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            Text(
+                                              "FE: ",
+                                              style: TextStyle(fontSize: 12),
+                                            ),
+                                            Text(
+                                              "2/3 ",
+                                              style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: Color(0xff197DDC)),
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            Text(
+                                              "MF: ",
+                                              style: TextStyle(fontSize: 12),
+                                            ),
+                                            Text(
+                                              "2/3",
+                                              style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: Color(0xff197DDC)),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           );
