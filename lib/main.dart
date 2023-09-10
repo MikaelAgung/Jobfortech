@@ -1,3 +1,4 @@
+import 'package:JobforTech/Chatitem.dart';
 import 'package:JobforTech/Companyprofile.dart';
 import 'package:JobforTech/Findworks&jobs.dart';
 import 'package:JobforTech/Jobpage.dart';
@@ -40,6 +41,7 @@ class MainApp extends StatelessWidget {
         Projectpage.nameRoute: (ctx) => Projectpage(),
         Jobslistpage.nameRoute: (ctx) => Jobslistpage(),
         Companyprofile.nameRoute: (ctx) => Companyprofile(),
+        isiChat.nameRoute: (ctx) => isiChat(),
       },
     );
   }

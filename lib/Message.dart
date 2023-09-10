@@ -15,11 +15,11 @@ class _MessagepageState extends State<Messagepage> {
         body: ListView(
       children: [
         // CHAT
-        // Chatitem(),
+        Chatitem(),
         // Chatitem(),
 
         // EMPTY CHAT
-        EmptyChat()
+        // EmptyChat()
       ],
     ));
   }
