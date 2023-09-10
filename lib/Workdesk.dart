@@ -1,4 +1,5 @@
 import 'package:JobforTech/Findworks&jobs.dart';
+import 'package:JobforTech/Newassigment.dart';
 import 'package:flutter/material.dart';
 
 class Workdeskpage extends StatelessWidget {
@@ -41,68 +42,72 @@ class Workdeskpage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Container(
-                    padding: EdgeInsets.all(20),
-                    width: 370,
-                    height: 103,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Color(0xffDCEEFF),
-                    ),
-                    child: Row(
-                      children: [
-                        Row(
-                          children: [
-                            ClipRRect(
-                                borderRadius: const BorderRadius.all(
-                                  Radius.circular(21.0),
-                                ),
-                                // call the random img funct
-                                child: Container(
-                                  width: 42,
-                                  child: Image.asset("images/Company1.png"),
-                                )),
-                          ],
-                        ),
-                        const SizedBox(
-                          width: 20,
-                        ),
-                        Container(
-                          // color: Colors.amber,
-                          width: 220,
-                          child: const Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                  GestureDetector(
+                    onTap: () =>
+                        Navigator.of(context).pushNamed(Newassign.nameRoute),
+                    child: Container(
+                      padding: EdgeInsets.all(20),
+                      width: 370,
+                      height: 103,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Color(0xffDCEEFF),
+                      ),
+                      child: Row(
+                        children: [
+                          Row(
                             children: [
-                              Text(
-                                "E-Commerce Project",
-                                style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color(0xff0371D8)),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(top: 4, bottom: 5),
-                                child: Text(
-                                  "Company Name",
-                                  style: TextStyle(color: Color(0xff858585)),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                "Back End • 3 Months",
-                                style: TextStyle(
-                                    color: Color(0xff0371D8), fontSize: 12),
-                              ),
+                              ClipRRect(
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.circular(21.0),
+                                  ),
+                                  // call the random img funct
+                                  child: Container(
+                                    width: 42,
+                                    child: Image.asset("images/Company1.png"),
+                                  )),
                             ],
                           ),
-                        ),
-                        Icon(
-                          Icons.arrow_circle_right_outlined,
-                          color: Color(0xff0371D8),
-                        )
-                      ],
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Container(
+                            // color: Colors.amber,
+                            width: 220,
+                            child: const Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "E-Commerce Project",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      color: Color(0xff0371D8)),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(top: 4, bottom: 5),
+                                  child: Text(
+                                    "Company Name",
+                                    style: TextStyle(color: Color(0xff858585)),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  "Back End • 3 Months",
+                                  style: TextStyle(
+                                      color: Color(0xff0371D8), fontSize: 12),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Icon(
+                            Icons.arrow_circle_right_outlined,
+                            color: Color(0xff0371D8),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],
