@@ -36,11 +36,21 @@ class Chatitem extends StatelessWidget {
             ),
             title: Padding(
               padding: const EdgeInsets.only(bottom: 3),
-              child: Text("Admin"),
+              child: Row(
+                children: [
+                  Text("Admin "),
+                  Image.asset(
+                    "images/VerifiedCheck.png",
+                    height: 25,
+                  )
+                ],
+              ),
             ),
             subtitle: Text(
               "Silahkan lengkapi data diri untuk mengajukan verifikasi. \Verifikasi diperlukan agar dapat melamar project dan pekerjaan",
-              style: TextStyle(fontSize: 13),
+              style: TextStyle(
+                fontSize: 13,
+              ),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
             ),
@@ -135,6 +145,12 @@ class _isiChatState extends State<isiChat> {
       akuYangKirim: false,
     ),
   ];
+  // CLEAR TEXT FIELD ONTAP
+  var msgController = TextEditingController();
+  void clearText() {
+    msgController.clear();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -148,7 +164,15 @@ class _isiChatState extends State<isiChat> {
                 Navigator.of(context).pop();
               },
               icon: Icon(Icons.arrow_back)),
-          title: Text("Admin")),
+          title: Row(
+            children: [
+              Text("Admin "),
+              Image.asset(
+                "images/VerifiedCheck.png",
+                height: 25,
+              )
+            ],
+          )),
       body: Column(
         children: [
           // CHAT
@@ -184,11 +208,24 @@ class _isiChatState extends State<isiChat> {
               alignment: pesan.akuYangKirim
                   ? Alignment.centerRight
                   : Alignment.centerLeft,
-              child: Card(
-                elevation: 8,
-                child: Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text(pesan.text),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 3),
+                child: Card(
+                  color:
+                      pesan.akuYangKirim ? Colors.green.shade400 : Colors.white,
+                  elevation: 8,
+                  child: Padding(
+                    padding: EdgeInsets.all(12),
+                    child: Container(
+                      constraints: BoxConstraints(maxWidth: 300),
+                      child: Text(pesan.text,
+                          style: TextStyle(
+                              height: 1.5,
+                              color: pesan.akuYangKirim
+                                  ? Colors.white
+                                  : Colors.black)),
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -198,10 +235,13 @@ class _isiChatState extends State<isiChat> {
           Container(
             color: Colors.grey.shade300,
             child: TextField(
+              controller: msgController,
               decoration: InputDecoration(
                   contentPadding: EdgeInsets.all(12),
                   hintText: "Ketik pesan ..."),
               onSubmitted: (text) {
+                // CLEAR TXT ON SUBMITED
+                clearText();
                 final pesan =
                     Pesan(text: text, date: DateTime.now(), akuYangKirim: true);
                 setState(() => pesanPesan.add(pesan));
