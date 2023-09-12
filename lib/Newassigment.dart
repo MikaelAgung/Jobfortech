@@ -15,6 +15,8 @@ class _NewassignState extends State<Newassign> {
   //FOR CHECK BOX
   bool value = false;
   bool value2 = false;
+  bool click = true;
+
   @override
   Widget build(BuildContext context) {
     dynamic tag = [
@@ -483,226 +485,299 @@ class _NewassignState extends State<Newassign> {
               ),
 
               // BUTTON BUTTON BUTTON BUTTON BUTTON BUTTON
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  // DECLINE BUTTON
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
-                    child: GestureDetector(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Color(0xff0371D8)),
-                          borderRadius: BorderRadius.circular(24),
-                          color: Colors.white,
-                        ),
-                        width: screenWidth * 0.42,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 15),
-                          child: Text(
-                            "Decline",
-                            style: TextStyle(color: Color(0xff0371D8)),
-                            textAlign: TextAlign.center,
+              Container(
+                  child: (click == false)
+                      ? //
+                      //  BUTTON STATE WHEN DECLINE PROJECT
+                      Padding(
+                          padding: const EdgeInsets.only(top: 20),
+                          child: GestureDetector(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(24),
+                                color: Color(0xffFF6161),
+                              ),
+                              width: screenWidth,
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 15),
+                                child: Text(
+                                  "Declined",
+                                  style: TextStyle(color: Colors.white),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ),
+                            onTap: () {},
                           ),
-                        ),
-                      ),
-                      onTap: () {
-                        showDialog(
-                            context: context,
-                            //USER MUST TAP BUTTON TO CLOSE POPUP
-                            barrierDismissible: false,
-                            builder: (context) {
-                              return Dialog(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10)),
-                                elevation: 16,
+                        )
+                      :
+
+                      // NORMAL STATE
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            // DECLINE BUTTON
+                            Padding(
+                              padding: const EdgeInsets.only(top: 20),
+                              child: GestureDetector(
                                 child: Container(
-                                    padding: EdgeInsets.all(20),
-                                    height: 210,
-                                    child: Column(
-                                      children: [
-                                        Icon(
-                                          Icons.warning,
-                                          size: 60,
-                                          color: Colors.red,
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              vertical: 10),
-                                          child: Column(
-                                            children: [
-                                              Text(
-                                                "Confirmation",
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              SizedBox(
-                                                height: 5,
-                                              ),
-                                              Text(
-                                                "Are you sure want to decline this project?.",
-                                                style: TextStyle(fontSize: 12),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-
-                                        //POPUP BUTTON
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            // CONFIRM NOOOOOOOOOOOO
-                                            TextButton(
-                                                onPressed: () {
-                                                  Navigator.of(context).pop();
-                                                },
-                                                child: Container(
-                                                    padding:
-                                                        EdgeInsets.symmetric(
-                                                            vertical: 10,
-                                                            horizontal: 30),
-                                                    decoration: BoxDecoration(
-                                                      border: Border.all(
-                                                          color: Color(
-                                                              0xff197DDC)),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              20),
-                                                      color: Colors.white,
+                                  decoration: BoxDecoration(
+                                    border:
+                                        Border.all(color: Color(0xff0371D8)),
+                                    borderRadius: BorderRadius.circular(24),
+                                    color: Colors.white,
+                                  ),
+                                  width: screenWidth * 0.42,
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 15),
+                                    child: Text(
+                                      "Decline",
+                                      style:
+                                          TextStyle(color: Color(0xff0371D8)),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                ),
+                                onTap: () {
+                                  showDialog(
+                                      context: context,
+                                      //USER MUST TAP BUTTON TO CLOSE POPUP
+                                      barrierDismissible: false,
+                                      builder: (context) {
+                                        return Dialog(
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(10)),
+                                          elevation: 16,
+                                          child: Container(
+                                              padding: EdgeInsets.all(20),
+                                              height: 210,
+                                              child: Column(
+                                                children: [
+                                                  Icon(
+                                                    Icons.warning,
+                                                    size: 60,
+                                                    color: Colors.red,
+                                                  ),
+                                                  Padding(
+                                                    padding: const EdgeInsets
+                                                            .symmetric(
+                                                        vertical: 10),
+                                                    child: Column(
+                                                      children: [
+                                                        Text(
+                                                          "Confirmation",
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 5,
+                                                        ),
+                                                        Text(
+                                                          "Are you sure want to decline this project?.",
+                                                          style: TextStyle(
+                                                              fontSize: 12),
+                                                        ),
+                                                      ],
                                                     ),
-                                                    child: Text(
-                                                      "No",
-                                                      style: TextStyle(
-                                                          color: Color(
-                                                              0xff197DDC)),
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                    ))),
+                                                  ),
 
-                                            // CONFIRM YESSSSSSSSSSSS
-                                            TextButton(
-                                                onPressed: () {},
-                                                child: Container(
-                                                    padding:
-                                                        EdgeInsets.symmetric(
-                                                            vertical: 10,
-                                                            horizontal: 20),
-                                                    decoration: BoxDecoration(
-                                                      border: Border.all(
-                                                          color: Color(
-                                                              0xff197DDC)),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              20),
-                                                      color: Color(0xff197DDC),
-                                                    ),
-                                                    child: Text(
-                                                      "Accept",
-                                                      style: TextStyle(
-                                                          color: Colors.white),
-                                                    ))),
-                                          ],
-                                        ),
-                                      ],
-                                    )),
-                              );
-                            });
-                      },
-                    ),
-                  ),
+                                                  //POPUP BUTTON
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      // CONFIRM NOOOOOOOOOOOO
+                                                      TextButton(
+                                                          onPressed: () {
+                                                            Navigator.of(
+                                                                    context)
+                                                                .pop();
+                                                          },
+                                                          child: Container(
+                                                              padding: EdgeInsets
+                                                                  .symmetric(
+                                                                      vertical:
+                                                                          10,
+                                                                      horizontal:
+                                                                          30),
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                border: Border.all(
+                                                                    color: Color(
+                                                                        0xff197DDC)),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            20),
+                                                                color: Colors
+                                                                    .white,
+                                                              ),
+                                                              child: Text(
+                                                                "No",
+                                                                style: TextStyle(
+                                                                    color: Color(
+                                                                        0xff197DDC)),
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                              ))),
 
-                  // APPLY BUTTON
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
-                    child: GestureDetector(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(24),
-                          color: Color(0xff0371D8),
-                        ),
-                        width: screenWidth * 0.42,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 15),
-                          child: Text(
-                            "Accept",
-                            style: TextStyle(color: Colors.white),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                      onTap: () {
-                        showDialog(
-                            context: context,
-                            //USER MUST TAP BUTTON TO CLOSE POPUP
-                            barrierDismissible: false,
-                            builder: (context) {
-                              return Dialog(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10)),
-                                elevation: 16,
+                                                      // CONFIRM YESSSSSSSSSSSS
+                                                      TextButton(
+                                                          onPressed: () {
+                                                            setState(() {
+                                                              click = !click;
+                                                              Navigator.of(
+                                                                      context)
+                                                                  .pop();
+                                                            });
+                                                          },
+                                                          child: Container(
+                                                              padding: EdgeInsets
+                                                                  .symmetric(
+                                                                      vertical:
+                                                                          10,
+                                                                      horizontal:
+                                                                          30),
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                border: Border.all(
+                                                                    color: Color(
+                                                                        0xff197DDC)),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            20),
+                                                                color: Color(
+                                                                    0xff197DDC),
+                                                              ),
+                                                              child: Text(
+                                                                "Yes",
+                                                                style: TextStyle(
+                                                                    color: Colors
+                                                                        .white),
+                                                              ))),
+                                                    ],
+                                                  ),
+                                                ],
+                                              )),
+                                        );
+                                      });
+                                },
+                              ),
+                            ),
+
+                            // APPLY BUTTON
+                            Padding(
+                              padding: const EdgeInsets.only(top: 20),
+                              child: GestureDetector(
                                 child: Container(
-                                    padding: EdgeInsets.all(20),
-                                    height: 210,
-                                    child: Column(
-                                      children: [
-                                        Icon(
-                                          Icons.warning,
-                                          size: 60,
-                                          color: Colors.red,
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              vertical: 10),
-                                          child: Column(
-                                            children: [
-                                              Text(
-                                                "Oops, Sorry",
-                                                textAlign: TextAlign.center,
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              SizedBox(
-                                                height: 5,
-                                              ),
-                                              Text(
-                                                "Your account must be verified to accept this project.",
-                                                style: TextStyle(fontSize: 12),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                        // CLOSE POPUP BUTTON
-                                        TextButton(
-                                            onPressed: () {
-                                              Navigator.of(context).pop();
-                                            },
-                                            child: Container(
-                                                padding: EdgeInsets.symmetric(
-                                                    vertical: 10,
-                                                    horizontal: 20),
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(20),
-                                                  color: Color(0xff197DDC),
-                                                ),
-                                                child: Text(
-                                                  "Got it",
-                                                  style: TextStyle(
-                                                      color: Colors.white),
-                                                )))
-                                      ],
-                                    )),
-                              );
-                            });
-                      },
-                    ),
-                  ),
-                ],
-              ),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(24),
+                                    color: Color(0xff0371D8),
+                                  ),
+                                  width: screenWidth * 0.42,
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 15),
+                                    child: Text(
+                                      "Accept",
+                                      style: TextStyle(color: Colors.white),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                ),
+                                onTap: () {
+                                  showDialog(
+                                      context: context,
+                                      //USER MUST TAP BUTTON TO CLOSE POPUP
+                                      barrierDismissible: false,
+                                      builder: (context) {
+                                        return Dialog(
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(10)),
+                                          elevation: 16,
+                                          child: Container(
+                                              padding: EdgeInsets.all(20),
+                                              height: 210,
+                                              child: Column(
+                                                children: [
+                                                  Icon(
+                                                    Icons.warning,
+                                                    size: 60,
+                                                    color: Colors.red,
+                                                  ),
+                                                  Padding(
+                                                    padding: const EdgeInsets
+                                                            .symmetric(
+                                                        vertical: 10),
+                                                    child: Column(
+                                                      children: [
+                                                        Text(
+                                                          "Oops, Sorry",
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 5,
+                                                        ),
+                                                        Text(
+                                                          "Your account must be verified to accept this project.",
+                                                          style: TextStyle(
+                                                              fontSize: 12),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  // CLOSE POPUP BUTTON
+                                                  TextButton(
+                                                      onPressed: () {
+                                                        Navigator.of(context)
+                                                            .pop();
+                                                      },
+                                                      child: Container(
+                                                          padding: EdgeInsets
+                                                              .symmetric(
+                                                                  vertical: 10,
+                                                                  horizontal:
+                                                                      20),
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        20),
+                                                            color: Color(
+                                                                0xff197DDC),
+                                                          ),
+                                                          child: Text(
+                                                            "Got it",
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .white),
+                                                          )))
+                                                ],
+                                              )),
+                                        );
+                                      });
+                                },
+                              ),
+                            ),
+                          ],
+                        )),
             ],
           ),
         ),
