@@ -209,7 +209,18 @@ class _HomepageState extends State<Homepage> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: const Text("really????"),
+            title: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 25),
+                  child: Text("CONFIRMATION"),
+                ),
+                Text(
+                  "Are you sure want to exit?",
+                  style: TextStyle(fontSize: 15, color: Colors.grey),
+                )
+              ],
+            ),
             actions: <Widget>[
               // No
               TextButton(
