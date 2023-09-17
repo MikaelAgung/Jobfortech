@@ -129,7 +129,7 @@ class _EditProfileState extends State<EditProfile> {
                               //to show image, you type like this.
                               File(image!.path),
                               fit: BoxFit.cover,
-                              width: MediaQuery.of(context).size.width,
+                              width: 80,
                               height: 80,
                             ),
                           ),
