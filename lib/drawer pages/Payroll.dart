@@ -14,6 +14,7 @@ class _PayrollState extends State<Payroll> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
           backgroundColor: Color(0xfff197DDC),
@@ -118,7 +119,7 @@ class _PayrollState extends State<Payroll> {
                 children: [
                   SizedBox(
                     height: 65,
-                    width: 350,
+                    width: screenWidth * 0.86,
                     child: OutlinedButton.icon(
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all(RoundedRectangleBorder(
