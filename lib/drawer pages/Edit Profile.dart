@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:image_picker/image_picker.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({super.key});
@@ -28,6 +31,65 @@ class _EditProfileState extends State<EditProfile> {
 
 // For calendar
   TextEditingController _kalender = TextEditingController();
+
+  XFile? image;
+
+  final ImagePicker picker = ImagePicker();
+
+  //we can upload image from camera or from gallery based on parameter
+  Future getImage(ImageSource media) async {
+    var img = await picker.pickImage(source: media);
+
+    setState(() {
+      image = img;
+    });
+  }
+
+  //show popup dialog
+  void myAlert() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+            title: Text('Please choose media to select'),
+            content: Container(
+              height: MediaQuery.of(context).size.height / 6,
+              child: Column(
+                children: [
+                  ElevatedButton(
+                    //if user click this button, user can upload image from gallery
+                    onPressed: () {
+                      Navigator.pop(context);
+                      getImage(ImageSource.gallery);
+                    },
+                    child: Row(
+                      children: [
+                        Icon(Icons.image),
+                        Text('From Gallery'),
+                      ],
+                    ),
+                  ),
+                  ElevatedButton(
+                    //if user click this button. user can upload image from camera
+                    onPressed: () {
+                      Navigator.pop(context);
+                      getImage(ImageSource.camera);
+                    },
+                    child: Row(
+                      children: [
+                        Icon(Icons.camera),
+                        Text('From Camera'),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,14 +120,27 @@ class _EditProfileState extends State<EditProfile> {
               ),
               Row(
                 children: [
-                  SizedBox(
-                    width: 80,
-                    child: ClipRRect(
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(40.0),
+                  image != null
+                      ? Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(40),
+                            child: Image.file(
+                              //to show image, you type like this.
+                              File(image!.path),
+                              fit: BoxFit.cover,
+                              width: MediaQuery.of(context).size.width,
+                              height: 80,
+                            ),
+                          ),
+                        )
+                      : Container(
+                          decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 212, 212, 212),
+                              borderRadius: BorderRadius.circular(40)),
+                          width: 80,
+                          height: 80,
                         ),
-                        child: Image.asset("images/Orang1.png")),
-                  ),
                   Spacer(),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -76,7 +151,9 @@ class _EditProfileState extends State<EditProfile> {
                               backgroundColor: Color(0xff197DDC),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(25))),
-                          onPressed: () {},
+                          onPressed: () {
+                            myAlert();
+                          },
                           child: Text(
                             "Upload Photo",
                             style: TextStyle(color: Colors.white),
